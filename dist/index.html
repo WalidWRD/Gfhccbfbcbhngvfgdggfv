@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#05080b">
+  <title>GEN1 — Live Fire Range</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="app">
+    <canvas id="scene" aria-label="GEN1 first-person training range"></canvas>
+
+    <div class="fx scanlines" aria-hidden="true"></div>
+    <div class="fx vignette" aria-hidden="true"></div>
+
+    <div class="hud">
+      <header class="hud-top">
+        <div class="brand">
+          <div class="brand-mark">G1</div>
+          <div class="brand-copy">
+            <h1>GEN<span>1</span></h1>
+            <p>TRAINING SIM // SECTOR 07</p>
+          </div>
+        </div>
+        <div class="readout">
+          <div class="stat"><span>SCORE</span><b id="score">0000</b></div>
+          <div class="stat"><span>AMMO</span><b id="ammo">30<i>/∞</i></b></div>
+          <div class="stat"><span>HEALTH</span><b id="health">100</b></div>
+        </div>
+      </header>
+
+      <section class="objective" aria-label="Objective">
+        <span class="tag">OBJECTIVE</span>
+        <p>Neutralize reactive targets</p>
+        <div class="bar"><i id="objective-bar"></i></div>
+      </section>
+
+      <div class="crosshair" id="crosshair" aria-hidden="true">
+        <i class="ch top"></i><i class="ch bottom"></i><i class="ch left"></i><i class="ch right"></i>
+        <i class="ch dot"></i>
+        <div class="hitmarker" id="hitmarker">✕</div>
+      </div>
+
+      <div class="radar" aria-hidden="true">
+        <canvas id="radar" width="220" height="220"></canvas>
+        <span>PROXIMITY</span>
+      </div>
+
+      <div class="hint" id="hint">
+        <b>CLICK TO ENGAGE</b>
+        <span>WASD MOVE · MOUSE AIM · LMB FIRE · R RELOAD</span>
+      </div>
+
+      <button id="fire" type="button" aria-label="Fire weapon">FIRE</button>
+      <div class="toast" id="toast" role="status"></div>
+    </div>
+
+    <div class="boot" id="boot">
+      <div class="boot-inner">
+        <div class="boot-mark">G1</div>
+        <p>INITIALIZING RANGE…</p>
+        <div class="boot-line"><i></i></div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
